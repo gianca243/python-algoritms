@@ -12,14 +12,25 @@ class Solution:
     #         return
     #     return self.look_pairs(nums, target)
 
+    # def look_pairs(self, nums: list[int], target: int):
+    #     cent = 0
+    #     for i in range(cent, len(nums)):
+    #         for j in range(cent+1, len(nums)):
+    #             if nums[i] + nums[j] == target:
+    #                 return [i, j]
+    #         cent += 1
+    #     return
+
     def look_pairs(self, nums: list[int], target: int):
-        cent = 0
-        for i in range(cent, len(nums)):
-            for j in range(cent+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
-            cent += 1
-        return
+        hash = {}
+        for i, value in enumerate(nums):
+            x = target - nums[i]
+            if (j := hash.get(str(x), None)) is not None:
+                return [i, j]
+            hash.update({
+                f"{value}": i
+            })
+        return []
 
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         return self.look_pairs(nums, target)
