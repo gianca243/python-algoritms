@@ -1,3 +1,4 @@
+"""My approach"""
 class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
         result = strs[0]
