@@ -35,6 +35,6 @@ def dias360(
 
 
 date_1 = datetime(2025, 5, 24)
-date_2 = datetime(2026, 2, 6)
+date_2 = datetime(2026, 1, 29)
 
 print(dias360(date_1, date_2))
