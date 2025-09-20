@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def dias360(
@@ -34,7 +34,12 @@ def dias360(
     return 360 * (y2 - y1) + 30 * (m2 - m1) + (d2 - d1)
 
 
-date_1 = datetime(2025, 5, 24)
-date_2 = datetime(2026, 1, 29)
+# date_1 = datetime(2025, 5, 24)
+# date_2 = datetime(2026, 1, 29)
 
-print(dias360(date_1, date_2))
+# print(dias360(date_1, date_2))
+
+date_1 = datetime.now()
+date_2 = timedelta(days=540)
+result = date_1 + date_2
+print(result)
